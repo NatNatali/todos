@@ -3,7 +3,6 @@ import './App.css';
 
 const Footer = ({getActiveItems, getCompletedItems, getAllItems, clearCompletedItems}) => {
     return <div className="footerContainer">
-        <span>vrb items left</span>
         <div className="buttonsContainer">
             <button className="footerButton" onClick={() => getAllItems()}>All</button>
             <button className="footerButton" onClick={() => getActiveItems()}>Active</button>

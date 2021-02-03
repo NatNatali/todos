@@ -23,8 +23,18 @@ const App = () => {
                 checked: false
             }])
             localStorage.setItem('newItem', JSON.stringify(newItem))
+            localStorage.setItem('newList', JSON.stringify(newItem))
             setSelectSectionCount(newItem)
             setInputValue("")
+        }
+    }
+
+    const clearCompletedItems = () => {
+        if(selectSectionCount) {
+            const activeItems =  JSON.parse(localStorage.getItem('newList'));
+            const activeItem = activeItems.filter(item => item.checked === false);
+            localStorage.setItem('newList', JSON.stringify(activeItem))
+            setSelectSectionCount(activeItem);
         }
     }
 
@@ -48,16 +58,15 @@ const App = () => {
         const allItems = localStorage.getItem('newList')
         setSelectSectionCount(JSON.parse(allItems))
     }
-    
-    const clearCompletedItems = () => {
-        selectSectionCount.splice("completedItem")
-    }
+
+
 
     return (
         <div  className="body">
             <div className="container">
+                <h1 className="title">todos</h1>
                 <div className="header">
-                    <h1 className="title">todos</h1>
+
                     <form action="" className="inputForm">
                         <input
                             type="text"

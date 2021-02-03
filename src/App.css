@@ -11,7 +11,15 @@
 }
 
 .container {
-  width: 25%;
+  min-width: 30%;
+}
+
+.header {
+  display: flex;
+}
+
+.inputForm {
+  flex-basis: 80%;
 }
 
 .title {
@@ -48,6 +56,7 @@
   box-sizing: border-box;
   border: 1px solid #e6e6e6;
   font-size: 14px;
+  justify-content: flex-end;
 }
 
 button {
@@ -57,10 +66,6 @@ button {
   padding: 2px;
   box-sizing: border-box;
   color: #777;
-}
-
-.buttonsContainer {
-  margin-left: 110px;
 }
 
 .footerButton {
@@ -98,17 +103,6 @@ button {
   font-size: 25px;
 }
 
-.xButton {
-  display: none;
-}
-
-.xButtonHover {
-  outline: none;
-  font-size: 16px;
-  margin-left: 280px;
-  display: block;
-}
-
 .checkbox {
   margin-top: 7px;
   width: 25px;
@@ -126,7 +120,12 @@ button {
 }
 
 .enterButton {
-  width: 150px;
-  height: 50px;
-  border: 1px solid grey;
+  flex-basis: 20%;
+  height: 65px;
+  border: 1px solid #e6e6e6;
 }
+
+.enterButton:focus {
+  outline:1px solid #e6e6e6
+}
+
